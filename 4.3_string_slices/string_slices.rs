@@ -17,4 +17,20 @@ fn main() {
     let hello_world: &str = &s[..];
 
     println!("{hello_world}");
+
+    println!("{}", first_word("Hello world"));
+    println!("{}", first_word(&String::from("Hello world")));
+}
+
+fn first_word(string: &str) -> &str {
+    // let bytes = string.as_bytes();
+    let bytes = string.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &string[..i];
+        }
+    }
+
+    return &string[..];
 }
