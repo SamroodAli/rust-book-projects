@@ -30,6 +30,6 @@ fn build_user(name: String, age: u8, email: String, is_active: bool) -> User {
         name,
         age,
         email,
-        is_active,
+        is_active
     }
 }

@@ -32,7 +32,7 @@ fn main() {
 
     // based on architecture, either 32 bit or 64bit machine.
 
-    let computer_architecture: isize = 1000000000000000000;
+    let computer_architecture: usize = 1000000000000000000;
 
     // integer overflow ( DO NOT RELY ON THIS BEHAVIOR (bad practice));
     // eight bit can hold 0 - 255 numbers, 266 will wrap around to 0,
