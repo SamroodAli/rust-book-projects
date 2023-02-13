@@ -10,3 +10,6 @@
 
 # ignore target folders
 **/target/
+
+
+playground.rs
