@@ -10,6 +10,8 @@ fn main() {
     );
 
     println!("printing the rectangle {:#?}", &rectangle);
+
+    print_with_dbg();
 }
 
 // METHOD 1: Without structs
@@ -33,4 +35,15 @@ struct Rectangle {
 
 fn area(rectangle: &Rectangle) -> u32 {
     rectangle.height * rectangle.width
+}
+
+fn print_with_dbg() -> Rectangle {
+    let scale = 2;
+
+    let rectangle = Rectangle {
+        width: dbg!(30 * scale),
+        height: 50,
+    };
+
+    dbg!(rectangle)
 }
