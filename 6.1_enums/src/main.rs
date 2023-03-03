@@ -10,6 +10,14 @@ enum IppAddrKindWithData {
     V6(String),
 }
 
+#[derive(Debug)]
+enum Message {
+    Quit,
+    Write(String),
+    ChangeColor(i32, i32, i32),
+    Move { x: u32, y: u32 },
+}
+
 fn main() {
     let four = IppAddrKind::V4;
     let six = IppAddrKind::V6;
@@ -21,6 +29,11 @@ fn main() {
     let other_six = IppAddrKindWithData::V6(String::from("::1"));
 
     println!("The other kind {:?} {:?}", other_four, other_six);
+
+    let next_move: Message = Message::Quit;
+    let next_move: Message = Message::ChangeColor(200, 200, 200);
+    let next_move: Message = Message::Write(String::from("Some message"));
+    let next_move: Message = Message::Move { x: 200, y: 200 };
 }
 
 // we can use enums like any other type
