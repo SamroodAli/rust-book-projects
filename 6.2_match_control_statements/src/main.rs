@@ -1,3 +1,10 @@
+fn main() {
+    match_with_enums();
+    match_with_options();
+}
+
+// match with enums
+
 #[derive(Debug)]
 enum UsStates {
     Alabama,
@@ -11,7 +18,7 @@ enum Coin {
     Quarter(UsStates),
 }
 
-fn main() {
+fn match_with_enums() {
     let coin = Coin::Nickel;
     println!("{}", value_in_cents(coin));
 
@@ -27,7 +34,6 @@ fn main() {
     let coin = Coin::Quarter(UsStates::Alaska);
     println!("{}", value_in_cents(coin));
 }
-
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
         Coin::Penny => 1,
@@ -37,5 +43,29 @@ fn value_in_cents(coin: Coin) -> u8 {
             println!("We got a coin from {:?}", state);
             25
         }
+    }
+}
+
+// match with options
+
+fn match_with_options() {
+    let num = Some(10);
+    plus_one(num);
+}
+
+fn plus_one(num: Option<i32>) -> Option<i32> {
+    match num {
+        Some(num) => {
+            let answer = Some(num + 1);
+            println!(
+                "Adding 1 to {num} gives you {:?}",
+                match answer {
+                    Some(n) => n,
+                    None => num + 1,
+                }
+            );
+            answer
+        }
+        None => None,
     }
 }
