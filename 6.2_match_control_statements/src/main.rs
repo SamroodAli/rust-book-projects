@@ -1,6 +1,7 @@
 fn main() {
     match_with_enums();
     match_with_options();
+    match_with_catch_all();
 }
 
 // match with enums
@@ -67,5 +68,33 @@ fn plus_one(num: Option<i32>) -> Option<i32> {
             answer
         }
         None => None,
+    }
+}
+
+// match with catch all patterns
+
+#[derive(Debug)]
+enum Roll {
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+}
+
+fn match_with_catch_all() {
+    let roll: Roll = Roll::Five;
+
+    match roll {
+        Roll::One => {
+            println!("Rolled a one");
+        }
+        Roll::Six => {
+            println!("Rolled a six")
+        }
+        other => {
+            println!("Rolled {:?}, roll again. Need a 'one' or a 'six'", other)
+        }
     }
 }
