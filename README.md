@@ -9,3 +9,4 @@
 
 # Resources
 [API guidelines (especially for building crates)](https://rust-lang.github.io/api-guidelines/)
+[Prelude - Items from the standard library already included in scope](https://doc.rust-lang.org/std/prelude/index.html#other-prelude)
