@@ -5,3 +5,7 @@
 # Special topics
 
 - [Integer data type overflows](https://doc.rust-lang.org/book/ch03-02-data-types.html)
+
+
+# Resources
+[API guidelines (especially for building crates)](https://rust-lang.github.io/api-guidelines/)
